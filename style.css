@@ -14,7 +14,10 @@ kiri/kanan */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Efek bayangan *
 }
 .kartu-profil img {
-   width: 150px;
+   width: 300px;
+   margin: 50px auto; /* 50px jarak atas/bawah, auto menengahkan kiri/kanan */
+    padding: 20px
+        background color: greeen;
    border-radius: 50%; /* Trik untuk membuat gambar persegi menjadi
 lingkaran sempurna */
 kartu-profil {
