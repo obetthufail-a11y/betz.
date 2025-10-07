@@ -13,7 +13,7 @@ kiri/kanan */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Efek bayangan *
 }
 .kartu-profil img {
-   width: 300px;
+   width: 150px;
    margin: 50px auto; /* 50px jarak atas/bawah, auto menengahkan kiri/kanan */
     padding: 20px
         background color: greeen;
