@@ -8,15 +8,12 @@ body {
     width: 150px;
     margin: 50px auto; /* 50px jarak atas/bawah, auto menengahka
 kiri/kanan */
-    padding: 20px;    background-color: blue;
-    border-radius: 15px; 
+    padding: 20px; 
+    background-color: blue;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    text-align: center;
 }
 .kartu-profil img {
    width: 150px;
-   margin: 50px auto; /* 50px jarak atas/bawah, auto menengahkan kiri/kanan */
-    padding: 20px
-        background color: greeen;
    border-radius: 50%; 
-   text-align: center; 
 }
