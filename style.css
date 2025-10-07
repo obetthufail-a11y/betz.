@@ -5,7 +5,7 @@ body {
    color: #191970 ; /*Warna teks utama (biru gelap) */
 }
 .kartu-profil {
-    width: 300px;
+    width: 150px;
     margin: 50px auto; /* 50px jarak atas/bawah, auto menengahka
 kiri/kanan */
     padding: 20px;    background-color: blue;
