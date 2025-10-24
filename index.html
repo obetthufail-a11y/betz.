@@ -1,20 +1,228 @@
 <!DOCTYPE html>
-<html>
-    <title>Profil Digital - [betz_store]</title>
-    <link rel="stylesheet" href="style.css">
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Makan Bergizi Gratis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0faf0;
+      margin: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #3aa757, #2e8c44);
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    main {
+      padding: 20px;
+    }
+    section {
+      display: none;
+      animation: fadeInUp 0.5s ease;
+    }
+    section.active {
+      display: block;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #3aa757;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #2e8c44;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #3aa757;
+      color: white;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      max-width: 500px;
+      text-align: center;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <!-- konten yang terlihat oleh pengunjung akan ada di sini -->
-  <div class='kartu-profil'>
-    <img src="1748393758254.jpg" alt="foto profil saya">
-    <h1>Ubaid Thufail Waliudin </h1>
-    <p>Siswa SMK yang tertarik dengan teknologi dan desain.
-selamat datang di website pertama saya</p>
-    <a
-href="https://www.instagram.com/bet_z00">kunjungi
-Instagram saya<a/>
-    <button id="sapaButton">bet!</button>
-   </div>
-<script src="script.js"></script>
+  <header>
+    <h1>Program Makan Bergizi Gratis</h1>
+    <p>Absensi Kehadiran dan Rekap Petugas</p>
+  </header>
+
+  <main>
+    <!-- Halaman Absensi -->
+    <section id="absensi" class="active">
+      <form id="absensiForm">
+        <label>Perwakilan Kelas:</label>
+        <input type="text" id="perwakilan" required />
+
+        <label>Kelas:</label>
+        <select id="kelas" required>
+          <option value="">-- Pilih Kelas --</option>
+
+          <optgroup label="Kelas X">
+            <option>X DKV 1</option><option>X DKV 2</option><option>X DKV 3</option>
+            <option>X TKJ 1</option><option>X TKJ 2</option><option>X TKJ 3</option>
+            <option>X TPM 1</option><option>X TPM 2</option><option>X TPM 3</option>
+            <option>X TKR 1</option><option>X TKR 2</option><option>X TKR 3</option>
+          </optgroup>
+
+          <optgroup label="Kelas XI">
+            <option>XI DKV 1</option><option>XI DKV 2</option><option>XI DKV 3</option>
+            <option>XI TKJ 1</option><option>XI TKJ 2</option><option>XI TKJ 3</option>
+            <option>XI TPM 1</option><option>XI TPM 2</option><option>XI TPM 3</option>
+            <option>XI TKR 1</option><option>XI TKR 2</option><option>XI TKR 3</option>
+          </optgroup>
+
+          <optgroup label="Kelas XII">
+            <option>XII DKV 1</option><option>XII DKV 2</option><option>XII DKV 3</option>
+            <option>XII TKJ 1</option><option>XII TKJ 2</option><option>XII TKJ 3</option>
+            <option>XII TPM 1</option><option>XII TPM 2</option><option>XII TPM 3</option>
+            <option>XII TKR 1</option><option>XII TKR 2</option><option>XII TKR 3</option>
+          </optgroup>
+        </select>
+
+        <label>Jumlah Siswa Hadir:</label>
+        <input type="number" id="jumlah" min="1" required />
+
+        <label>Tanggal Kehadiran:</label>
+        <input type="text" id="tanggal" placeholder="Pilih tanggal (YYYY-MM-DD)"
+          onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" required />
+
+        <button type="button" onclick="simpanData()">Simpan Kehadiran</button>
+      </form>
+    </section>
+
+    <!-- Halaman Ucapan -->
+    <section id="ucapan">
+      <div class="container">
+        <h1>✅ Data Berhasil Disimpan</h1>
+        <p>🍽 Terima kasih telah mengisi absensi Program <b>Makan Bergizi Gratis</b>.<br>
+        Silakan perwakilan kelas mengambil makanan bergizi 🥦.</p>
+        <p>💪 Tetap semangat dan jaga kesehatan!</p>
+        <button onclick="bukaPetugas()">📋 Lihat Rekap Petugas</button>
+        <button onclick="kembaliAbsensi()">🔙 Kembali ke Absensi</button>
+      </div>
+    </section>
+
+    <!-- Halaman Petugas -->
+    <section id="petugas">
+      <h2>📋 Rekap Kehadiran Petugas</h2>
+      <table id="tabelAbsensi">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Perwakilan</th>
+            <th>Kelas</th>
+            <th>Jumlah Hadir</th>
+            <th>Tanggal</th>
+            <th>Waktu</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button onclick="kembaliAbsensi()">🔙 Kembali ke Absensi</button>
+    </section>
+  </main>
+
+  <script>
+    function gantiHalaman(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    function simpanData() {
+      const perwakilan = document.getElementById("perwakilan").value.trim();
+      const kelas = document.getElementById("kelas").value;
+      const jumlah = document.getElementById("jumlah").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const waktu = new Date().toLocaleTimeString();
+
+      if (!perwakilan || !kelas || !jumlah || !tanggal) {
+        alert("Harap isi semua data!");
+        return;
+      }
+
+      let data = JSON.parse(localStorage.getItem("absensi")) || [];
+      data.push({ perwakilan, kelas, jumlah, tanggal, waktu });
+      localStorage.setItem("absensi", JSON.stringify(data));
+
+      gantiHalaman("ucapan");
+    }
+
+    function bukaPetugas() {
+      const tbody = document.querySelector("#tabelAbsensi tbody");
+      tbody.innerHTML = "";
+      const data = JSON.parse(localStorage.getItem("absensi")) || [];
+
+      data.forEach((item, i) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${i + 1}</td>
+          <td>${item.perwakilan}</td>
+          <td>${item.kelas}</td>
+          <td>${item.jumlah}</td>
+          <td>${item.tanggal}</td>
+          <td>${item.waktu}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      gantiHalaman("petugas");
+    }
+
+    function kembaliAbsensi() {
+      gantiHalaman("absensi");
+    }
+
+    // Saat pertama kali buka halaman, tampilkan absensi
+    gantiHalaman("absensi");
+  </script>
 </body>
 </html>
